@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.alejandroBrb'
 
 android {
     compileSdkVersion 28
@@ -24,12 +26,4 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
 }
 
-publish {
-    userOrg = 'flipboard'
-    groupId = 'com.flipboard'
-    artifactId = 'bottomsheet-commons'
-    publishVersion = VERSION
-    description = 'Common components library for BottomSheet'
-    website = 'https://github.com/Flipboard/bottomsheet'
-    licences = ['BSD 3-Clause']
-}
+
