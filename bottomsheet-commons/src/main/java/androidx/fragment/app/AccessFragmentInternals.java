@@ -1,5 +1,8 @@
-package android.support.v4.app;
+package androidx.fragment.app;
 
+/**
+ * @author Alejandro Barba on 1/22/19.
+ */
 public final class AccessFragmentInternals {
     private AccessFragmentInternals() {
         throw new AssertionError("No instances.");

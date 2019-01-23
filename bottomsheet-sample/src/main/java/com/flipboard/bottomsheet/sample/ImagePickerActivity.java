@@ -10,10 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -28,6 +24,11 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 /**
  * Activity demonstrating the use of {@link ImagePickerSheetView}
@@ -100,10 +101,9 @@ public final class ImagePickerActivity extends AppCompatActivity {
                 .setImageProvider(new ImagePickerSheetView.ImageProvider() {
                     @Override
                     public void onProvideImage(ImageView imageView, Uri imageUri, int size) {
+
                         Glide.with(ImagePickerActivity.this)
                                 .load(imageUri)
-                                .centerCrop()
-                                .crossFade()
                                 .into(imageView);
                     }
                 })
@@ -233,8 +233,6 @@ public final class ImagePickerActivity extends AppCompatActivity {
         selectedImage.setImageDrawable(null);
         Glide.with(this)
                 .load(selectedImageUri)
-                .crossFade()
-                .fitCenter()
                 .into(selectedImage);
     }
 
